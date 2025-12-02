@@ -80,6 +80,3 @@ def fetch_hisitorical_data(symbol, time):
     except Exception as e:
         print(e)
         return None
-
-print(fetch_info("MSFT"))
-print(fetch_hisitorical_data("MSFT","1mo"))

@@ -31,7 +31,3 @@ def get_recommend(symbol):
     return stock.recommendations
 
 
-print(returns("MSFT","2mo"))
-print(get_recommend("MSFT"))
-
-

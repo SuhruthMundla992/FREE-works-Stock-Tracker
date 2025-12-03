@@ -10,13 +10,13 @@ def fetch_info(symbol):
         ticker = yf.Ticker(symbol)
 
 
-        ticker_info = ticker.info
+        ticker_info = ticker.info #dictionary of common information
         
 
-        if not ticker_info:
+        if not ticker_info: #checks if data is present
             raise ValueError(f"No historical data found for ticker '{symbol}'")
         
-        metrics ={
+        metrics ={ #metrics I am presenting
             "Name": "longName",
             "City": "city",
             "State": "state",
@@ -29,7 +29,7 @@ def fetch_info(symbol):
             "Gross Margin": "grossMargins"
         }
         
-        values = {}
+        values = {} #adds metrics of info to easy to process data
         for label, key in metrics.items():
                 values[label] = ticker_info.get(key)
         
@@ -48,7 +48,7 @@ def fetch_info(symbol):
         print(e)
         return None
 
-
+#same thing but for hisotircal data
 def fetch_hisitorical_data(symbol, time):
     try:
         ticker = yf.Ticker(symbol)
